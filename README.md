@@ -28,7 +28,7 @@ Simple, dependency-free security hook using manual validation:
 ```bash
 # 1. Download hook
 curl -o ~/.claude/hooks/security_hook_v1.py \\
-  https://raw.githubusercontent.com/YOUR_USERNAME/claude-hooks-public/main/v1-basic/security_hook.py
+  https://raw.githubusercontent.com/hah23255/claude-hooks-public/main/v1-basic/security_hook.py
 
 # 2. Make executable
 chmod +x ~/.claude/hooks/security_hook_v1.py
@@ -47,9 +47,9 @@ pip install pydantic
 
 # 2. Download schemas and hook
 curl -o ~/.claude/hooks/schemas.py \\
-  https://raw.githubusercontent.com/YOUR_USERNAME/claude-hooks-public/main/v2-pydantic/schemas.py
+  https://raw.githubusercontent.com/hah23255/claude-hooks-public/main/v2-pydantic/schemas.py
 curl -o ~/.claude/hooks/security_hook_v2.py \\
-  https://raw.githubusercontent.com/YOUR_USERNAME/claude-hooks-public/main/v2-pydantic/security_hook.py
+  https://raw.githubusercontent.com/hah23255/claude-hooks-public/main/v2-pydantic/security_hook.py
 
 # 3. Make executable
 chmod +x ~/.claude/hooks/security_hook_v2.py
@@ -147,7 +147,7 @@ Input validation failed:
 **V1 (Basic)**:
 ```bash
 curl -o ~/.claude/hooks/security_hook_v1.py \\
-  https://raw.githubusercontent.com/YOUR_USERNAME/claude-hooks-public/main/v1-basic/security_hook.py
+  https://raw.githubusercontent.com/hah23255/claude-hooks-public/main/v1-basic/security_hook.py
 
 chmod +x ~/.claude/hooks/security_hook_v1.py
 ```
@@ -159,9 +159,9 @@ pip install pydantic
 
 # Download files
 curl -o ~/.claude/hooks/schemas.py \\
-  https://raw.githubusercontent.com/YOUR_USERNAME/claude-hooks-public/main/v2-pydantic/schemas.py
+  https://raw.githubusercontent.com/hah23255/claude-hooks-public/main/v2-pydantic/schemas.py
 curl -o ~/.claude/hooks/security_hook_v2.py \\
-  https://raw.githubusercontent.com/YOUR_USERNAME/claude-hooks-public/main/v2-pydantic/security_hook.py
+  https://raw.githubusercontent.com/hah23255/claude-hooks-public/main/v2-pydantic/security_hook.py
 
 chmod +x ~/.claude/hooks/security_hook_v2.py
 ```
@@ -170,7 +170,7 @@ chmod +x ~/.claude/hooks/security_hook_v2.py
 
 ```bash
 curl -o ~/.claude/security-config.json \\
-  https://raw.githubusercontent.com/YOUR_USERNAME/claude-hooks-public/main/config/security-config.json
+  https://raw.githubusercontent.com/hah23255/claude-hooks-public/main/config/security-config.json
 ```
 
 ### Step 4: Customize Configuration
@@ -424,7 +424,7 @@ echo '{"session_id":"test","transcript_path":"/tmp/t.json","cwd":"/tmp","permiss
 ```bash
 # Download template
 curl -o ~/.claude/security-config.json \\
-  https://raw.githubusercontent.com/YOUR_USERNAME/claude-hooks-public/main/config/security-config.json
+  https://raw.githubusercontent.com/hah23255/claude-hooks-public/main/config/security-config.json
 
 # Or create manually
 cat > ~/.claude/security-config.json <<EOF
@@ -462,7 +462,7 @@ cp ~/.claude/hooks/security_hook_v1.py ~/.claude/hooks/security_hook.py
 
 ```bash
 # Clone repository
-git clone https://github.com/YOUR_USERNAME/claude-hooks-public.git
+git clone https://github.com/hah23255/claude-hooks-public.git
 cd claude-hooks-public
 
 # Run V1 tests
@@ -489,14 +489,14 @@ pip install pydantic
 
 # 2. Download schemas
 curl -o ~/.claude/hooks/schemas.py \\
-  https://raw.githubusercontent.com/YOUR_USERNAME/claude-hooks-public/main/v2-pydantic/schemas.py
+  https://raw.githubusercontent.com/hah23255/claude-hooks-public/main/v2-pydantic/schemas.py
 
 # 3. Backup current hook
 cp ~/.claude/hooks/security_hook_v1.py ~/.claude/hooks/security_hook_v1.backup
 
 # 4. Download V2 hook
 curl -o ~/.claude/hooks/security_hook_v2.py \\
-  https://raw.githubusercontent.com/YOUR_USERNAME/claude-hooks-public/main/v2-pydantic/security_hook.py
+  https://raw.githubusercontent.com/hah23255/claude-hooks-public/main/v2-pydantic/security_hook.py
 
 # 5. Update settings.json to use v2
 # Change: security_hook_v1.py → security_hook_v2.py
@@ -526,7 +526,7 @@ MIT License - See [LICENSE](LICENSE) file
 
 ## Support
 
-- **Issues**: [GitHub Issues](https://github.com/YOUR_USERNAME/claude-hooks-public/issues)
+- **Issues**: [GitHub Issues](https://github.com/hah23255/claude-hooks-public/issues)
 - **Documentation**: See [docs/](docs/) directory
 - **Examples**: See [examples/](examples/) directory
 
