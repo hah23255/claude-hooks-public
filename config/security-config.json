@@ -1,0 +1,135 @@
+{
+  "version": "1.0",
+  "description": "Production security configuration for Claude Code CLI",
+  "deployed": "2025-10-29",
+
+  "fail_closed": true,
+
+  "restricted_paths": [
+    "~/.ssh",
+    "~/.gnupg",
+    "~/.claude/hooks",
+    "~/.claude/settings.json",
+    "~/.claude/security-config.json",
+    "~/.claude/storage-rules.json",
+    "/data/data/com.termux/files/home/.ssh",
+    "/data/data/com.termux/files/home/.gnupg",
+    "/data/data/com.termux/files/home/.bashrc",
+    "/data/data/com.termux/files/home/.bash_profile"
+  ],
+
+  "allowed_paths": [
+    "/storage/emulated/0/Enterprise",
+    "/storage/emulated/0/monorepo",
+    "~/storage/Enterprise",
+    "~/storage/monorepo",
+    "/data/data/com.termux/files/home/storage/Enterprise",
+    "/data/data/com.termux/files/home/storage/monorepo",
+    "/data/data/com.termux/files/home/.claude/sessions",
+    "/data/data/com.termux/files/home/.claude/file-history",
+    "/data/data/com.termux/files/home/.claude/projects",
+    "/data/data/com.termux/files/home/.claude/audit.jsonl",
+    "/data/data/com.termux/files/home/.claude/rate-limit-state.json"
+  ],
+
+  "dangerous_bash_patterns": [
+    "rm\\s+-rf",
+    "dd\\s+if=",
+    "mkfs\\.",
+    "curl.*-d\\s+@",
+    "wget.*&&.*bash",
+    "chmod\\s+777",
+    "chmod\\s+\\+x.*&&.*bash",
+    ">/dev/null.*2>&1.*&$",
+    "base64.*\\|.*bash",
+    "eval.*\\$\\(",
+    "sudo\\s+",
+    "su\\s+-",
+    "\\|\\s*nc\\s+",
+    "\\|\\s*netcat",
+    ">/etc/",
+    "cat.*>.*\\.sh.*&&.*bash",
+    "rm\\s+.*~/.claude",
+    "rm\\s+.*~/.ssh"
+  ],
+
+  "allowed_domains": [
+    "docs.claude.com",
+    "github.com",
+    "githubusercontent.com",
+    "raw.githubusercontent.com",
+    "localhost",
+    "127.0.0.1",
+    "anthropic.com",
+    "npmjs.com",
+    "pypi.org"
+  ],
+
+  "sensitive_patterns": [
+    "ssh",
+    "key",
+    "password",
+    "secret",
+    "token",
+    "credential",
+    "api",
+    "private",
+    ".env",
+    "config",
+    "auth",
+    "bearer",
+    "authorization",
+    "aws",
+    "gcp",
+    "azure"
+  ],
+
+  "rate_limits": {
+    "Read": 100,
+    "Write": 50,
+    "Edit": 50,
+    "Glob": 50,
+    "Grep": 50,
+    "Bash": 20,
+    "WebFetch": 30,
+    "WebSearch": 20,
+    "Task": 10,
+    "NotebookEdit": 30
+  },
+
+  "monitoring": {
+    "log_all_operations": true,
+    "log_allowed_operations": true,
+    "log_blocked_operations": true,
+    "alert_on_suspicious": true,
+    "alert_on_enumeration": true,
+    "alert_on_rate_limit": true
+  },
+
+  "enforcement": {
+    "block_on_critical": true,
+    "block_on_high": true,
+    "block_on_medium": false,
+    "block_on_low": false,
+    "require_confirmation_for_critical_paths": false
+  },
+
+  "system_info": {
+    "platform": "android-termux",
+    "deployment": "production",
+    "gaps_addressed": [
+      "GAP 1: Read tool monitoring",
+      "GAP 2: Bash command scanning",
+      "GAP 3: Glob/Grep enumeration detection",
+      "GAP 4: Fail-closed with security-config.json",
+      "GAP 5: Security scanner integrated",
+      "GAP 7: Network monitoring",
+      "GAP 8: Detailed audit logging",
+      "GAP 9: Rate limiting",
+      "GAP 10: Task/agent monitoring",
+      "GAP 12: Symbolic link resolution",
+      "GAP 13: Enhanced Edit controls",
+      "GAP 15: Configuration file protection"
+    ]
+  }
+}
